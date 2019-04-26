@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Escaperoom</title>
+</head>
+<body>
+    
+    <div id="correct">
+        <textarea id="myTextarea" rows="2" cols="50"></textarea>
+        <br>
+        <button type="button" onclick="myFunction()">Is de zin juist?</button>
+    </div>
+
+    <style>
+        body{
+            background-color: #DEDEDE;
+        }
+        #correct{
+            position: absolute;
+            top: 35%;
+            left: 30%;
+        }
+        #myTextarea{
+            font-size: 2em;
+        }
+        button{
+            padding: 1.5em;
+            font-size: 1.5em;
+            margin: 20px 0 0 30%;
+            background-color: red;
+            color:white;
+        }
+        button:hover{
+            box-shadow: 2px 2px grey;
+        }
+        p{
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            margin-left: -60px;
+        }
+    </style>
+
+    <script>
+          var zin = document.getElementsByTagName("textarea");
+          var knop = document.getElementsByTagName("button");
+          function myFunction() {
+          if(document.getElementById("myTextarea").value == "De sleutel is geplakt onder een" || document.getElementById("myTextarea").value == "de sleutel is geplakt onder een") {
+              //document.getElementById("myTextarea").value = "hallo terug"
+              
+              var node = document.createElement("P");
+              var textnode = document.createTextNode("... BANK");
+              node.appendChild(textnode);
+              document.getElementById("correct").appendChild(node);
+          } else {
+              document.getElementById("myTextarea").value = ""
+            }
+          }
+
+      </script>
+
+</body>
+</html>
