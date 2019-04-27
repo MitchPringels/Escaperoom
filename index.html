@@ -1,55 +1,60 @@
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="Key-icon.png">
     <title>Escaperoom</title>
 </head>
 <body>
-    
     <div id="correct">
         <textarea id="myTextarea" rows="2" cols="50"></textarea>
-        <br>
-        <button type="button" onclick="myFunction()">Is de zin juist?</button>
+        <div class="aroundDiv">
+          <button type="button" onclick="myFunction()">Is de zin juist?</button>
+        </div>
     </div>
-
     <style>
-        body{
-            background-color: #DEDEDE;
-        }
-        #correct{
-            position: absolute;
-            top: 35%;
-            left: 30%;
-        }
-        #myTextarea{
-            font-size: 2em;
-        }
-        button{
-            padding: 1.5em;
-            font-size: 1.5em;
-            margin: 20px 0 0 30%;
-            background-color: red;
-            color:white;
-        }
-        button:hover{
-            box-shadow: 2px 2px grey;
-        }
-        p{
-            font-size: 2em;
-            font-weight: bold;
-            text-align: center;
-            margin-left: -60px;
-        }
+      body{
+        background-color: #DEDEDE;
+      }
+      #correct{
+        width: 40%;
+        padding-top:15em;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #myTextarea{
+        font-size: 2em;
+        margin-bottom:1em;
+      }
+      .aroundDiv{
+        display: block;
+        margin-left: 25%;
+        margin-right: auto;
+      }
+      button{
+        padding: 1em;
+        font-size: 1.5em;
+        margin: auto;
+        width: 50%;
+        background-color: red;
+        color:white;
+      }
+      button:hover{
+        box-shadow: 2px 3px rgba(88,88,88,0.5);
+      }
+      p{
+        font-size: 2em;
+        font-weight: bold;
+        text-align: center;
+        margin-left: -60px;
+      }
     </style>
-
     <script>
-          var zin = document.getElementsByTagName("textarea");
-          var knop = document.getElementsByTagName("button");
           function myFunction() {
-          if(document.getElementById("myTextarea").value == "De sleutel is geplakt onder een" || document.getElementById("myTextarea").value == "de sleutel is geplakt onder een") {
-              //document.getElementById("myTextarea").value = "hallo terug"
-              
+          if(document.getElementById("myTextarea").value == "De sleutel is geplakt onder een" || document.getElementById("myTextarea").value == "de sleutel is geplakt onder een"
+          || document.getElementById("myTextarea").value == "De sleutel is geplakt onder een " || document.getElementById("myTextarea").value == "de sleutel is geplakt onder een ") {
               var node = document.createElement("P");
               var textnode = document.createTextNode("... BANK");
               node.appendChild(textnode);
@@ -58,8 +63,6 @@
               document.getElementById("myTextarea").value = ""
             }
           }
-
       </script>
-
 </body>
 </html>
